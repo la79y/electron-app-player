@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #video-container {
+    width: 80%;
+  }
+  
+  video {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  #backButton {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 20px 0;
+
+  }
+  
+  #backButton i {
+    color: white;
+  }
