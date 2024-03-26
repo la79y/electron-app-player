@@ -45,9 +45,7 @@ ipcMain.handle("start-stream", (event, srtUrl) => {
   return new Promise((resolve, reject) => {
     const server = http.createServer((req, res) => {
       if (req.url === "/video") {
-        const command = ffmpeg(
-          srtUrl
-        )
+        const command = ffmpeg(srtUrl)
           .videoCodec("libx264")
           .audioCodec("aac")
           .format("mp4")

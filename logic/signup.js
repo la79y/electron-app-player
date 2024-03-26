@@ -16,7 +16,7 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
     password: password,
   };
 
-  fetch("http://localhost:3000/signup", {
+  fetch("http://localhost:8080/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,11 +32,10 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
     .then(() => {
       alert("Account created successfully. You can now log in.");
       window.location.href = "../pages/login.html";
-    }).catch(error => {
-      error.json().then(err => {
-          alert("Error: " + err.error);
-      });
-
-      
     })
+    .catch((error) => {
+      error.json().then((err) => {
+        alert("Error: " + err.error);
+      });
+    });
 });
