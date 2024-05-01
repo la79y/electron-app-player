@@ -19,6 +19,7 @@ const populateStreamList = async () => {
     const liveStreams = result.data;
 
     const streamList = document.getElementById("stream-list");
+    streamList.innerHTML = "";
     liveStreams.forEach((stream) => {
       const listItem = createStreamListItem(stream);
       streamList.appendChild(listItem);
@@ -41,5 +42,4 @@ function createStreamListItem(stream) {
   return listItem;
 }
 
-// Call the function to populate the list when the page loads
 window.addEventListener("load", populateStreamList);
