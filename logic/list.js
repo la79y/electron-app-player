@@ -34,12 +34,31 @@ const populateStreamList = async () => {
 function createStreamListItem(stream) {
   const listItem = document.createElement("li");
   const link = document.createElement("a");
+  const message = document.createElement("span");
+  message.className = "message";
   link.textContent = stream.name;
-  link.href = `../pages/player.html?id=${
-    stream.name
-  }&srtUrl=${encodeURIComponent(stream.playerUrl)}`;
+  if (stream?.isStreaming) {
+    link.href = `../pages/player.html?id=${
+      stream.name
+    }&srtUrl=${encodeURIComponent(stream.playerUrl)}`;
+  } else {
+    message.textContent = "The stream has not started yet";
+    link.href = "#";
+    link.classList.add("disabled");
+    link.onclick = function (event) {
+      event.preventDefault();
+      message.style.display = "inline";
+    };
+  }
+
   listItem.appendChild(link);
+  listItem.appendChild(message);
   return listItem;
 }
+
+const button = document.getElementById("refresh-button");
+button.addEventListener("click", function () {
+  window.location.reload();
+});
 
 window.addEventListener("load", populateStreamList);

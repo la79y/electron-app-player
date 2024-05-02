@@ -7,6 +7,7 @@ body {
 
 h2 {
   color: #333;
+  margin-bottom: 40px;
 }
 
 ul {
@@ -15,7 +16,7 @@ ul {
 }
 
 li {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 a {
@@ -31,6 +32,28 @@ a {
   transition: background-color 0.3s;
 }
 
+a.disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
 a:hover {
   background-color: #0056b3;
+}
+
+.message {
+  display: none;
+  color: red;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+#refresh-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
