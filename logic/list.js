@@ -1,11 +1,13 @@
 const populateStreamList = async () => {
+  const loadingIndicator = document.getElementById("loading");
   try {
+    loadingIndicator.style.display = "block";
     const authToken = localStorage.getItem("authToken");
     if (!authToken) {
       throw new Error("No authentication token found");
     }
 
-    const response = await fetch("http://localhost:8080/stream", {
+    const response = await fetch("http://161.35.240.211:80/stream", {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -26,7 +28,8 @@ const populateStreamList = async () => {
     });
   } catch (error) {
     console.error("Failed to load streams:", error);
-    // Handle error (e.g., redirect to login page or show a message)
+  } finally {
+    loadingIndicator.style.display = "none";
   }
 };
 

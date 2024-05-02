@@ -14,7 +14,7 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
     password: password,
   };
 
-  fetch("http://localhost:8080/login", {
+  fetch("http://161.35.240.211:80/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -62,7 +62,7 @@ document
     const email = document.getElementById("email").value;
 
     // Send request to reset password
-    fetch("http://localhost:8080/reset-password-request", {
+    fetch("http://161.35.240.211:80/reset-password-request", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

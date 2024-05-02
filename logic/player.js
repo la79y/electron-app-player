@@ -7,7 +7,7 @@ const populateStreamList = async () => {
       throw new Error("No authentication token found");
     }
 
-    const response = await fetch("http://localhost:8080/stream", {
+    const response = await fetch("http://161.35.240.211:80/stream", {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
