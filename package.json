@@ -1,5 +1,5 @@
 {
-  "name": "my-electron-app",
+  "name": "lahthi-player",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -9,12 +9,23 @@
   },
   "author": "",
   "license": "ISC",
+  "build": {
+    "appId": "com.lahthi.player",
+    "productName": "Lahthi",
+    "mac": {
+      "category": "public.app-category.video"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
   "devDependencies": {
-    "electron": "^27.0.2"
+    "electron": "^27.0.2",
+    "electron-builder": "^24.13.3"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "electron-reload": "^2.0.0-alpha.1",
-    "fluent-ffmpeg": "^2.1.2",
-    "cross-env": "^7.0.3"
+    "fluent-ffmpeg": "^2.1.2"
   }
 }
