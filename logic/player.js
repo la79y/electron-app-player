@@ -7,7 +7,7 @@ const populateStreamList = async () => {
       throw new Error("No authentication token found");
     }
 
-    const response = await fetch("http://161.35.240.211:80/stream", {
+    const response = await fetch("https://la79y.com/stream", {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -28,7 +28,6 @@ const populateStreamList = async () => {
     });
   } catch (error) {
     console.error("Failed to load streams:", error);
-    // Handle error (e.g., redirect to login page or show a message)
   }
 };
 

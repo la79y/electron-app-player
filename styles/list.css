@@ -41,13 +41,6 @@ a:hover {
   background-color: #0056b3;
 }
 
-.message {
-  display: none;
-  color: red;
-  font-size: 12px;
-  margin-left: 10px;
-}
-
 #refresh-button {
   position: fixed;
   top: 10px;

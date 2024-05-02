@@ -7,7 +7,7 @@ const populateStreamList = async () => {
       throw new Error("No authentication token found");
     }
 
-    const response = await fetch("http://161.35.240.211:80/stream", {
+    const response = await fetch("https://la79y.com/stream", {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -37,25 +37,14 @@ const populateStreamList = async () => {
 function createStreamListItem(stream) {
   const listItem = document.createElement("li");
   const link = document.createElement("a");
-  const message = document.createElement("span");
-  message.className = "message";
   link.textContent = stream.name;
   if (stream?.isStreaming) {
     link.href = `../pages/player.html?id=${
       stream.name
     }&srtUrl=${encodeURIComponent(stream.playerUrl)}`;
-  } else {
-    message.textContent = "The stream has not started yet";
-    link.href = "#";
-    link.classList.add("disabled");
-    link.onclick = function (event) {
-      event.preventDefault();
-      message.style.display = "inline";
-    };
+    listItem.appendChild(link);
   }
 
-  listItem.appendChild(link);
-  listItem.appendChild(message);
   return listItem;
 }
 

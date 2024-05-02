@@ -16,7 +16,7 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
     password: password,
   };
 
-  fetch("http://161.35.240.211:80/signup", {
+  fetch("https://la79y.com/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
